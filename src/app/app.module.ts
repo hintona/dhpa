@@ -2,9 +2,9 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { MatSelectModule } from '@angular/material/select';
 
 import { AppRoutingModule } from './app-routing.module';
-import { AgmCoreModule } from '@agm/core'
 import { AppComponent } from './app.component';
 import { AboutComponent } from './AboutPage/about/about.component';
 import { PracticeareasComponent } from './PracticePage/practiceareas/practiceareas.component';
@@ -25,9 +25,7 @@ import { MapComponent } from './HomePage/map/map.component';
     BrowserAnimationsModule,
     AppRoutingModule,
     MDBBootstrapModule.forRoot(),
-    AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyBI6EJnkZnaB4El7hk_1ldPXmZcKZtyDCo'
-    })
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

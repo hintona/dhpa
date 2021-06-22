@@ -1,5 +1,11 @@
-agm-map {
-    border-right: 10px solid white;
-    height: 500px;
-    width: 60%
-  }
+.grid-item-map{
+    min-width: 500px;
+    min-height: 500px;
+}
+.grid-item{
+    min-width: 100px;
+}
+
+.grid-container{
+    max-width: 1200px;
+}

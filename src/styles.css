@@ -1,5 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
 hr.hr1{
     border-top: 4px solid #454851;
     width: 60%
+}
+
+.row{
+    column-gap: 20px;
+    row-gap: 20px;
+    justify-content: center;
+}
+  
+  
+.border-box{
+    display: grid;
+    justify-content: center;
+}
+
+.spacer{
+    height:20px
 }
