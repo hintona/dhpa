@@ -1,0 +1,11 @@
+.buffer-box{
+    text-align: justify;
+    border-top: 20px solid transparent;
+    border-left: 40px solid transparent;
+    border-right: 40px solid transparent;
+    border-bottom: 40px solid transparent;
+}
+
+.row{
+    column-gap: 150px;
+}
