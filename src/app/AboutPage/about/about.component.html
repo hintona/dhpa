@@ -1,1 +1,6 @@
-<p>about works!</p>
+<div *ngFor="let post of posts$ | async">
+    <div *ngIf="post.tags == 4">
+        {{post.title.rendered}}
+    </div>
+</div>
+<!--TODO: have all about sections displayed here with any photos they want-->

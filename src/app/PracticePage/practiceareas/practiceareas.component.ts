@@ -1,15 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
+
+import { WordpressService } from 'src/app/wordpress.service';
 
 @Component({
   selector: 'app-practiceareas',
   templateUrl: './practiceareas.component.html',
   styleUrls: ['./practiceareas.component.css']
 })
-export class PracticeareasComponent implements OnInit {
+export class PracticeareasComponent {
+  posts$: Observable<any[]>;
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor(private wp: WordpressService) {
+    this.posts$ = this.wp.getPosts();
   }
-
 }

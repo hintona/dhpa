@@ -1,125 +1,22 @@
 <p class="spacer"></p>
 <h2 style="text-align: center;">Legal Services</h2>
 <p style="text-align: center;">Please note, these are not the only legal services offered by Deane and Hinton, P.A. If you have any questions, please contact us directly.</p>
-<div class="buffer-box">
-    <div class="grid-container">
-        <div class="row">
-            <div class="column">
-                <a [routerLink] = "['/practiceareas']" fragment="one">-Legal Service 1 </a><br />
-                <br />
-                <a [routerLink] = "['/practiceareas']" fragment="four">-Legal Service 4</a><br />
-                <br />
-                <a [routerLink] = "['/practiceareas']" fragment="seven">-Legal Service 7</a><br />
-            </div>
-
-            <div class="column">
-                <a [routerLink] = "['/practiceareas']" fragment="two">-Legal Service 2</a><br />
-                <br />
-                <a [routerLink] = "['/practiceareas']" fragment="five">-Legal Service 5</a><br />
-                <br />
-                <a [routerLink] = "['/practiceareas']" fragment="eight">-Legal Service 8</a><br />
-                <br />
-                <a [routerLink] = "['/practiceareas']" fragment="ten">-Legal Service 10</a><br />
-            </div>
-
-            <div class="column">
-                <a [routerLink] = "['/practiceareas']" fragment="three">-Legal Service 3</a><br />
-                <br />
-                <a [routerLink] = "['/practiceareas']" fragment="six">-Legal Service 6</a><br />
-                <br />
-                <a [routerLink] = "['/practiceareas']" fragment="nine">-Legal Service 9</a>
-            </div>
-
-        </div>
+<div *ngFor="let post of posts$ | async">
+    <div style="text-align: center;" *ngIf="post.tags == 3">
+        <a [routerLink]="['/practiseareas']" fragment="{{post.slug}}">{{ post.title.rendered }}</a>
     </div>
 </div>
 
-<hr class="hr1">
-<h3 style="text-align: center;" id="one">Legal Service 1</h3>
-<p class="buffer-box">This is some placeholder text describing the specific service provided.
-    More information will be filled out about this later, but for spacing
-    reasons I need to have a good paragraph of text here in order to test
-    that page anchoring ids are functioning as intended. Without enough text here,
-    I will not be able to tell if autoscrolling is properly working. 
-</p>
+<div *ngFor="let post of posts$ | async">
+    <div *ngIf="post.tags == 3">
+        <hr class="hr1">
+        <h3 style="text-align: center;" id="{{post.slug}}">{{ post.title.rendered }}</h3>
+        <p class="buffer-box">{{ post.content.rendered }}</p>
+    </div>
+</div>
 
-<hr class="hr1">
-<h3 style="text-align: center;" id="two">Legal Service 2</h3>
-<p class="buffer-box">This is some placeholder text describing the specific service provided.
-    More information will be filled out about this later, but for spacing
-    reasons I need to have a good paragraph of text here in order to test
-    that page anchoring ids are functioning as intended. Without enough text here,
-    I will not be able to tell if autoscrolling is properly working. 
-</p>
-
-<hr class="hr1">
-<h3 style="text-align: center;" id="three">Legal Service 3</h3>
-<p class="buffer-box">This is some placeholder text describing the specific service provided.
-    More information will be filled out about this later, but for spacing
-    reasons I need to have a good paragraph of text here in order to test
-    that page anchoring ids are functioning as intended. Without enough text here,
-    I will not be able to tell if autoscrolling is properly working. 
-</p>
-
-<hr class="hr1">
-<h3 style="text-align: center;" id="four">Legal Service 4</h3>
-<p class="buffer-box">This is some placeholder text describing the specific service provided.
-    More information will be filled out about this later, but for spacing
-    reasons I need to have a good paragraph of text here in order to test
-    that page anchoring ids are functioning as intended. Without enough text here,
-    I will not be able to tell if autoscrolling is properly working. 
-</p>
-
-<hr class="hr1">
-<h3 style="text-align: center;" id="five">Legal Service 5</h3>
-<p class="buffer-box">This is some placeholder text describing the specific service provided.
-    More information will be filled out about this later, but for spacing
-    reasons I need to have a good paragraph of text here in order to test
-    that page anchoring ids are functioning as intended. Without enough text here,
-    I will not be able to tell if autoscrolling is properly working. 
-</p>
-
-<hr class="hr1">
-<h3 style="text-align: center;" id="six">Legal Service 6</h3>
-<p class="buffer-box">This is some placeholder text describing the specific service provided.
-    More information will be filled out about this later, but for spacing
-    reasons I need to have a good paragraph of text here in order to test
-    that page anchoring ids are functioning as intended. Without enough text here,
-    I will not be able to tell if autoscrolling is properly working. 
-</p>
-
-<hr class="hr1">
-<h3 style="text-align: center;" id="seven">Legal Service 7</h3>
-<p class="buffer-box">This is some placeholder text describing the specific service provided.
-    More information will be filled out about this later, but for spacing
-    reasons I need to have a good paragraph of text here in order to test
-    that page anchoring ids are functioning as intended. Without enough text here,
-    I will not be able to tell if autoscrolling is properly working. 
-</p>
-
-<hr class="hr1">
-<h3 style="text-align: center;" id="eight">Legal Service 8</h3>
-<p class="buffer-box">This is some placeholder text describing the specific service provided.
-    More information will be filled out about this later, but for spacing
-    reasons I need to have a good paragraph of text here in order to test
-    that page anchoring ids are functioning as intended. Without enough text here,
-    I will not be able to tell if autoscrolling is properly working. 
-</p>
-
-<hr class="hr1">
-<h3 style="text-align: center;" id="nine">Legal Service 9</h3>
-<p class="buffer-box">This is some placeholder text describing the specific service provided.
-    More information will be filled out about this later, but for spacing
-    reasons I need to have a good paragraph of text here in order to test
-    that page anchoring ids are functioning as intended. Without enough text here,
-    I will not be able to tell if autoscrolling is properly working. 
-</p>
-
-<hr class="hr1">
-<h3 style="text-align: center;" id="ten">Legal Service 10</h3>
-<p class="buffer-box">This is some placeholder text describing the specific service provided.
-    More information will be filled out about this later, but for spacing
-    reasons I need to have a good paragraph of text here in order to test
-    that page anchoring ids are functioning as intended. Without enough text here,
-    I will not be able to tell if autoscrolling is properly working. 
-</p>
+<div>
+    <hr class="hr1">
+    <p style="text-align: justify; border-left: 40px solid transparent; border-right: 40px solid transparent; border-top: 40px solid transparent;">Couldn't find the type of case that fits you best? Don't worry! We handle many other kind of legal issues. Why don't you contact us directly?</p>
+    <div style="text-align: justify; border-left: 40px solid transparent; border-bottom: 40px solid transparent;"><button mdbBtn type="button" color="secondary" mdbWavesEffect>Not sure? Contact Us</button></div>
+</div>
