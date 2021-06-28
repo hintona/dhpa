@@ -11,6 +11,7 @@ import { AboutComponent } from './AboutPage/about/about.component';
 import { PracticeareasComponent } from './PracticePage/practiceareas/practiceareas.component';
 import { HomeComponent } from './HomePage/home/home.component';
 import { MapComponent } from './HomePage/map/map.component';
+import { ContactformComponent } from './HomePage/contactform/contactform.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { MapComponent } from './HomePage/map/map.component';
     AboutComponent,
     PracticeareasComponent,
     HomeComponent,
-    MapComponent
+    MapComponent,
+    ContactformComponent
   ],
   imports: [
     BrowserModule,
