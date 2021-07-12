@@ -16,22 +16,25 @@
       <div class="modal-body">
 
         Call us at 727-576-8811, or you can fill out this form and we will contact you.
-        <div class="md-form">
-            <input mdbInput type="text" id="legalName" class="form-control">
-            <label for="legalName" class="">First and Last Name</label>
-        </div>
-        <div class="md-form">
-            <input mdbInput type="text" id="prefName" class="form-control">
-            <label for="prefName" class="">Preferred Name</label>
-        </div>
-        <div class="md-form">
-            <input mdbInput type="text" id="phoneNum" class="form-control">
-            <label for="phoneNum" class="">Phone Number</label>
-        </div>
-        <div class="md-form">
-            <input mdbInput type="text" id="email" class="form-control">
-            <label for="email" class="">Email</label>
-        </div>
+        <form class="example-form">
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Legal First and Last Name</mat-label>
+            <input matInput>
+          </mat-form-field> 
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Preferred Name</mat-label>
+            <input matInput>
+          </mat-form-field> 
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Phone</mat-label>
+            <input matInput placeholder="###-###-####">
+          </mat-form-field> 
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Email</mat-label>
+            <input matInput type="email">
+          </mat-form-field> 
+        </form>
+        
 
         <p>How would you like to be contacted? If you select phone, we will call you, not text.</p>
         <mat-radio-group aria-label="Select an option">

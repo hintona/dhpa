@@ -20,5 +20,4 @@ export class MapComponent {
     {value: 'ends', viewValue: 'Closed on Weekends'}
   ];
   //TODO: sense the day of the week and default to that
-  //TODO: Also fix colour scheme of dropdown
 }
