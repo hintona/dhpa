@@ -1,9 +1,9 @@
 <!-- TODO: the toggleable notification bar-->
 <!--Navbar-->
-<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark green darken-4">
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark green darken-4" mdbStickyHeader>
 
   <!-- Navbar brand -->
-  <mdb-navbar-brand><a class="navbar-brand" href="/">DHPA Logo</a></mdb-navbar-brand>
+  <mdb-navbar-brand><a class="navbar-brand" href="/"><h3><b>Deane & Hinton, P.A.</b></h3></a></mdb-navbar-brand>
 
   <!-- Collapsible content -->
   <links>
@@ -27,6 +27,8 @@
 </mdb-navbar>
 <!--/.Navbar-->
 
+<div class="spacer"></div>
+
 <router-outlet></router-outlet>
 
 <!--TODO: the modal contact form-->
@@ -44,7 +46,7 @@
       <div class="col-md">
 
         <!-- Content -->
-        <h5 class="text-uppercase">DHPA Logo</h5>
+        <h5 class="text-uppercase">Deane & Hinton, P.A.</h5>
         
 
       </div>
@@ -119,6 +121,7 @@
 
   <!-- Copyright -->
   <div class="footer-copyright text-center py-3">
+    <!--TODO: change this to this year variable-->
       © 2021 Copyright
   </div>
   <!-- Copyright -->

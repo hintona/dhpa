@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { MatSelectModule } from '@angular/material/select';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatInputModule } from '@angular/material/input'; 
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -29,7 +31,9 @@ import { ContactformComponent } from './HomePage/contactform/contactform.compone
     HttpClientModule,
     AppRoutingModule,
     MDBBootstrapModule.forRoot(),
-    MatSelectModule
+    MatSelectModule,
+    MatRadioModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
