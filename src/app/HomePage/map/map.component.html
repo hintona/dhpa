@@ -24,7 +24,7 @@
           <br />FL 33702
           <br />United States</p>
             <p><mat-form-field>
-              <mat-select placeholder="Hours">
+              <mat-select placeholder="Hours" [(value)]="today">
                 <mat-option *ngFor="let day of days" [value]="day.value">
                   {{day.viewValue}}
                 </mat-option>

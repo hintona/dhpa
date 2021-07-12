@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { getLocaleFirstDayOfWeek } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
 
 export interface Weekdays {
-  value: string;
+  value: number;
   viewValue: string;
 }
 
@@ -10,14 +11,27 @@ export interface Weekdays {
   templateUrl: './map.component.html',
   styleUrls: ['./map.component.css']
 })
-export class MapComponent {
+export class MapComponent implements OnInit{
+  ngOnInit(): void {
+    this.getToday();
+  }
+  
+  today:number | undefined;
+
   days: Weekdays[] = [
-    {value: 'm', viewValue: 'Mon 9am-5pm'},
-    {value: 't', viewValue: 'Tues 9am-5pm'},
-    {value: 'w', viewValue: 'Wed 9am-5pm'},
-    {value: 'r', viewValue: 'Thurs 9am-5pm'},
-    {value: 'f', viewValue: 'Fri 9am-5pm'},
-    {value: 'ends', viewValue: 'Closed on Weekends'}
+    {value: 1, viewValue: 'Mon 9am-5pm'},
+    {value: 2, viewValue: 'Tues 9am-5pm'},
+    {value: 3, viewValue: 'Wed 9am-5pm'},
+    {value: 4, viewValue: 'Thurs 9am-5pm'},
+    {value: 5, viewValue: 'Fri 9am-5pm'},
+    {value: 6, viewValue: 'Closed on Weekends'}
   ];
-  //TODO: sense the day of the week and default to that
+  
+  getToday(){
+    let thisDay = new Date();
+    if(thisDay.getDay() == 0){
+      this.today = 6;
+    }
+    else{ this.today = thisDay.getDay(); }
+  }
 }
