@@ -13,4 +13,11 @@ export class HomeComponent{
   constructor(private wp: WordpressService) {
     this.posts$ = this.wp.getPosts();
   }
+
+  cleanup(content:string):string{
+    var text = content.replace('<p>','');
+    text = text.replace('</p>','');
+    text = text.replace('<br />','');
+    return text;
+  }
 }

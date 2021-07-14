@@ -20,13 +20,13 @@
       <div class="row">
         
         <div class="column" *ngFor="let post of posts$ | async">
-          <div class="grid-item" *ngIf="post.tags == 3">
+          <div class="grid-item" *ngIf="post.tags == 2">
             <mdb-card>
               <mdb-card-body>
                 <mdb-card-title>
                   <h4>{{post.title.rendered}}</h4>
                 </mdb-card-title>
-                <mdb-card-text>{{ post.excerpt.rendered }}</mdb-card-text>
+                <mdb-card-text>{{ cleanup(post.excerpt.rendered) }}</mdb-card-text>
                   <a [routerLink] = "['/practiceareas']" fragment="{{post.slug}}" class="card-link">Read More...</a>
               </mdb-card-body>
             </mdb-card>
@@ -39,10 +39,6 @@
   </div>
  
 <div class="spacer"></div>
-<hr class="hr">
-<!--TODO:Figure out where this went-->
+<hr class="hr1">
 <div class="spacer"></div>
-
-  <!-- This will have the map that will show the location of the office -->
-
-  <app-map></app-map>
+<app-map></app-map>

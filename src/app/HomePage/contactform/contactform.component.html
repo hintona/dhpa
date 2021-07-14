@@ -49,7 +49,7 @@
             <mat-option value="0"> </mat-option>
             <mat-option value="1">I'm not sure</mat-option>
             <div *ngFor="let post of posts$ | async">
-              <div *ngIf="post.tags == 3">
+              <div *ngIf="post.tags == 2">
                 <mat-option value={{post.title.rendered}}>{{post.title.rendered}}</mat-option>
               </div>
             </div>
