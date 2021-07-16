@@ -1,4 +1,4 @@
-<button type="button" mdbBtn color="secondary" class="relative waves-light" (click)="basicModal.show()" mdbWavesEffect>Contact Us</button>
+<button mat-raised-button color="primary" style="text-transform:uppercase; color:white; height:45px; width:150px" (click)="basicModal.show()">Contact Us</button>
 
 <div mdbModal #basicModal="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel" aria-hidden="true" style="overflow: auto">
   <div class="modal-dialog" role="document">
@@ -17,19 +17,19 @@
 
         Call us at 727-576-8811, or you can fill out this form and we will contact you.
         <form class="example-form">
-          <mat-form-field class="example-full-width" appearance="fill">
+          <mat-form-field color="accent" class="example-full-width" appearance="fill">
             <mat-label>Legal First and Last Name</mat-label>
             <input matInput>
           </mat-form-field> 
-          <mat-form-field class="example-full-width" appearance="fill">
+          <mat-form-field color="accent" class="example-full-width" appearance="fill">
             <mat-label>Preferred Name</mat-label>
             <input matInput>
           </mat-form-field> 
-          <mat-form-field class="example-full-width" appearance="fill">
+          <mat-form-field color="accent" class="example-full-width" appearance="fill">
             <mat-label>Phone</mat-label>
             <input matInput placeholder="###-###-####">
           </mat-form-field> 
-          <mat-form-field class="example-full-width" appearance="fill">
+          <mat-form-field color="accent" class="example-full-width" appearance="fill">
             <mat-label>Email</mat-label>
             <input matInput type="email">
           </mat-form-field> 
@@ -44,7 +44,7 @@
         <p></p>
 
         <p>What kind of case do you have?</p>
-        <mat-form-field>
+        <mat-form-field color="accent" >
           <mat-select placeholder="Case" [(value)]="selected">
             <mat-option value="0"> </mat-option>
             <mat-option value="1">I'm not sure</mat-option>
@@ -58,7 +58,7 @@
 
         </mat-form-field>
         <div *ngIf="selected == '2' || selected == '1'">
-          <mat-form-field class="example-full-width" appearance="fill">
+          <mat-form-field color="accent" class="example-full-width" appearance="fill">
             <mat-label>Please briefly describe your case.</mat-label>
             <textarea matInput placeholder="Ex."></textarea>
           </mat-form-field>
@@ -67,7 +67,7 @@
 
       <!-- Modal's footer -->
       <div class="modal-footer">
-        <button type="button" mdbBtn color="secondary" class="waves-light" aria-label="Close" (click)="basicModal.hide()" mdbWavesEffect>Send</button>
+        <button mat-raised-button color="primary" style="text-transform:uppercase; color:white; height:45px; width:150px" (click)="basicModal.hide()" mdbWavesEffect>Send</button>
       </div>
 
     </div>

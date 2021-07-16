@@ -1,6 +1,20 @@
 <!-- TODO: the toggleable notification bar-->
+<div *ngFor="let post of posts$ | async">
+  <div *ngIf="post.tags == 4">
+    <div class="notif-bar">
+      <button mat-button (click)="notif.toggle()" (click)="toggleClosed()" style="width:100%">
+        {{ post.title.rendered }} 
+        <span *ngIf="expanded; else closed"><mdb-icon fas icon="chevron-up"></mdb-icon></span>
+        <ng-template #closed><mdb-icon fas icon="chevron-down"></mdb-icon></ng-template>
+      </button>
+      <div class="" mdbCollapse #notif="bs-collapse">
+        <p style="padding:15px;">{{ cleanup(post.content.rendered) }}</p>
+      </div>
+    </div>
+  </div>
+</div>
 <!--Navbar-->
-<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark green darken-4" mdbStickyHeader>
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark green darken-4 sticky-top">
 
   <!-- Navbar brand -->
   <mdb-navbar-brand><a class="navbar-brand" href="/"><h3><b>Deane & Hinton, P.A.</b></h3></a></mdb-navbar-brand>
@@ -26,8 +40,6 @@
 
 </mdb-navbar>
 <!--/.Navbar-->
-
-<div class="spacer"></div>
 
 <router-outlet></router-outlet>
 

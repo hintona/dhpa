@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { MatButtonModule } from '@angular/material/button'; 
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatInputModule } from '@angular/material/input'; 
@@ -31,6 +32,7 @@ import { ContactformComponent } from './HomePage/contactform/contactform.compone
     HttpClientModule,
     AppRoutingModule,
     MDBBootstrapModule.forRoot(),
+    MatButtonModule,
     MatSelectModule,
     MatRadioModule,
     MatInputModule

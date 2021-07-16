@@ -19,6 +19,8 @@ export class PracticeareasComponent {
     var text = content.replace('<p>','');
     text = text.replace('</p>','');
     text = text.replace('<br />','');
+    text = text.replace('&#8217;',"'");
+    text = text.replace('&amp;',"&");
     return text;
   }
 }

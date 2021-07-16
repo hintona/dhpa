@@ -1,4 +1,6 @@
-.spacer{
-    height:65px
-
+.notif-bar{
+    background-color: #454851;
+    text-align:center;
+    color: #fceff9;
+    padding: 10px;
 }
