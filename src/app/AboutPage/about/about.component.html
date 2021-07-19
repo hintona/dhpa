@@ -1,6 +1,9 @@
 <div *ngFor="let post of posts$ | async">
     <div *ngIf="post.tags == 3">
         {{post.title.rendered}}
+        {{post.content.rendered}}
+        {{post.featured_media}}
+        
     </div>
 </div>
 <!--TODO: have all about sections displayed here with any photos they want-->

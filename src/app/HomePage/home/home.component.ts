@@ -14,12 +14,8 @@ export class HomeComponent{
     this.posts$ = this.wp.getPosts();
   }
 
-  cleanup(content:string):string{
-    var text = content.replace('<p>','');
-    text = text.replace('</p>','');
-    text = text.replace('<br />','');
-    text = text.replace('&#8217;',"'");
-    text = text.replace('&#038;',"&");
-    return text;
+  clean(text:string){
+    wp: WordpressService;
+    return this.wp.cleanup(text);
   }
 }

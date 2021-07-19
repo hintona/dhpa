@@ -24,9 +24,9 @@
             <mdb-card>
               <mdb-card-body>
                 <mdb-card-title>
-                  <h4>{{ cleanup(post.title.rendered) }}</h4>
+                  <h4>{{ clean(post.title.rendered) }}</h4>
                 </mdb-card-title>
-                <mdb-card-text>{{ cleanup(post.excerpt.rendered) }}</mdb-card-text>
+                <mdb-card-text>{{ clean(post.excerpt.rendered) }}</mdb-card-text>
                   <a [routerLink] = "['/practiceareas']" fragment="{{post.slug}}" class="card-link">Read More...</a>
               </mdb-card-body>
             </mdb-card>

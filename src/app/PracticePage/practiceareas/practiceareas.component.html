@@ -4,7 +4,7 @@
 
 <div *ngFor="let post of posts$ | async">
     <div style="text-align: center;" *ngIf="post.tags == 2">
-        <a [routerLink]="['/practiceareas']" fragment="{{post.slug}}">{{ cleanup(post.title.rendered) }}</a>
+        <a [routerLink]="['/practiceareas']" fragment="{{post.slug}}">{{ clean(post.title.rendered) }}</a>
     </div>
 </div>
 
@@ -16,8 +16,8 @@
                 <hr class="hr1">
                 <div class="row" style="margin-left: 10%; margin-right: 10%;">
                     <div class="grid-item">
-                        <h3 style="text-align: center;" id="{{post.slug}}">{{ cleanup(post.title.rendered) }}</h3>
-                        <p>{{ cleanup(post.content.rendered) }}</p>
+                        <h3 style="text-align: center;" id="{{post.slug}}">{{ clean(post.title.rendered) }}</h3>
+                        <p>{{ clean(post.content.rendered) }}</p>
                     </div>
                 </div>
             </div>

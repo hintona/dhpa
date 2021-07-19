@@ -1,3 +1,4 @@
+import { HttpClient, HttpHandler } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { WordpressService } from 'src/app/wordpress.service';
@@ -12,5 +13,10 @@ export class AboutComponent {
 
   constructor(private wp: WordpressService) {
     this.posts$ = this.wp.getPosts();
+  }
+
+  clean(text:string){
+    wp: WordpressService;
+    return this.wp.cleanup(text);
   }
 }
