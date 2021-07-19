@@ -18,6 +18,8 @@ export class HomeComponent{
     var text = content.replace('<p>','');
     text = text.replace('</p>','');
     text = text.replace('<br />','');
+    text = text.replace('&#8217;',"'");
+    text = text.replace('&#038;',"&");
     return text;
   }
 }

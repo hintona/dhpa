@@ -10,3 +10,8 @@
 .example-full-width {
     width: 100%;
 }
+
+hr.hr2{
+    width: 85%;
+    border-top: 2px solid #9575CD;
+}

@@ -1,4 +1,4 @@
-<!-- This will have the carousel at the top of the page -->
+<!-- TODO: actually get this carousel working -->
 <mdb-carousel class="carousel slide carousel-fade" [animation]="'fade'">
     <mdb-carousel-item>
       
@@ -24,7 +24,7 @@
             <mdb-card>
               <mdb-card-body>
                 <mdb-card-title>
-                  <h4>{{post.title.rendered}}</h4>
+                  <h4>{{ cleanup(post.title.rendered) }}</h4>
                 </mdb-card-title>
                 <mdb-card-text>{{ cleanup(post.excerpt.rendered) }}</mdb-card-text>
                   <a [routerLink] = "['/practiceareas']" fragment="{{post.slug}}" class="card-link">Read More...</a>

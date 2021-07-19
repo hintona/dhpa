@@ -18,12 +18,17 @@ export class Case{
 })
 export class ContactformComponent {
 
-  selected = '0';
+  contactType = '0';
+  clientCase = '0';
   
   posts$: Observable<any[]>;
 
   constructor(private wp: WordpressService) {
     this.posts$ = this.wp.getPosts();
+  }
+
+  changeVal(num:string){
+    this.contactType = num;
   }
 
 }

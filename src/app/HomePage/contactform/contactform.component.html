@@ -15,15 +15,15 @@
       <!-- Modal's body -->
       <div class="modal-body">
 
-        Call us at 727-576-8811, or you can fill out this form and we will contact you.
+        <p>Call us at 727-576-8811, or you can fill out this form and we will contact you.</p>
         <form class="example-form">
           <mat-form-field color="accent" class="example-full-width" appearance="fill">
             <mat-label>Legal First and Last Name</mat-label>
-            <input matInput>
+            <input matInput placeholder="Ex. Joseph Smith">
           </mat-form-field> 
           <mat-form-field color="accent" class="example-full-width" appearance="fill">
             <mat-label>Preferred Name</mat-label>
-            <input matInput>
+            <input matInput placeholder="Ex. Joe">
           </mat-form-field> 
           <mat-form-field color="accent" class="example-full-width" appearance="fill">
             <mat-label>Phone</mat-label>
@@ -31,21 +31,41 @@
           </mat-form-field> 
           <mat-form-field color="accent" class="example-full-width" appearance="fill">
             <mat-label>Email</mat-label>
-            <input matInput type="email">
+            <input matInput type="email" placeholder="Ex. joe.smith@example.com">
           </mat-form-field> 
         </form>
         
+        <hr class="hr2">
 
-        <p>How would you like to be contacted? If you select phone, we will call you, not text.</p>
-        <mat-radio-group aria-label="Select an option">
-          <mat-radio-button value="1">Email</mat-radio-button>
-          <mat-radio-button value="2">Phone</mat-radio-button>
+        <p>How would you like to be contacted?</p>
+        <mat-radio-group aria-label="Select an option" value="contactType">
+          <mat-radio-button value="1" (change)="changeVal('1')">Email</mat-radio-button>
+          <mat-radio-button value="2" (change)="changeVal('2')">Phone</mat-radio-button>
         </mat-radio-group>
         <p></p>
 
+        <p *ngIf="contactType == '1'">
+          Please make sure that the email you give us is secure, and is one that
+          no one else has access to.  Don't use a work email that your employer can access.  
+          If you have a dissolution of marriage case, please don't give us an email account that
+          you share with your spouse. 
+        </p>
+
+        <div *ngIf="contactType == '2'">
+          <p>What would be the best time to contact you?  Please note, we <b>will not text you.</b> 
+           Deane & Hinton, P.A. will <b>always call.</b>  Our working hours are 9am-5pm, Monday through Friday. 
+          We will not call you outside of these times.  If we cannot call you during the times you give us, we will email.</p>
+          <mat-form-field color="accent" class="example-full-width" appearance="fill">
+            <mat-label>When should we call?</mat-label>
+            <textarea matInput placeholder="Ex. Monday at 10am, Tuesday at 10am, Thursday at 4pm"></textarea>
+          </mat-form-field>
+        </div>
+
+        <hr class="hr2">
+
         <p>What kind of case do you have?</p>
         <mat-form-field color="accent" >
-          <mat-select placeholder="Case" [(value)]="selected">
+          <mat-select placeholder="Case" [(value)]="clientCase">
             <mat-option value="0"> </mat-option>
             <mat-option value="1">I'm not sure</mat-option>
             <div *ngFor="let post of posts$ | async">
@@ -57,7 +77,7 @@
           </mat-select>
 
         </mat-form-field>
-        <div *ngIf="selected == '2' || selected == '1'">
+        <div *ngIf="clientCase == '2' || clientCase == '1'">
           <mat-form-field color="accent" class="example-full-width" appearance="fill">
             <mat-label>Please briefly describe your case.</mat-label>
             <textarea matInput placeholder="Ex."></textarea>
@@ -73,3 +93,4 @@
     </div>
   </div>
 </div>
+<!--TODO: get this to actually send an email-->
