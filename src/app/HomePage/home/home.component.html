@@ -3,10 +3,11 @@
     <mdb-carousel-item>
       
       <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(6).jpg" alt="Second slide">
-      
+      <app-contactform></app-contactform>
     </mdb-carousel-item>
     <mdb-carousel-item>
-      <app-contactform></app-contactform>
+      <mdb-card>
+      <app-contactform></app-contactform></mdb-card>
     </mdb-carousel-item>
   </mdb-carousel>
   <div class="spacer"></div>
@@ -24,9 +25,9 @@
             <mdb-card>
               <mdb-card-body>
                 <mdb-card-title>
-                  <h4>{{ clean(post.title.rendered) }}</h4>
+                  <h4 [innerHTML]="post.title.rendered"></h4>
                 </mdb-card-title>
-                <mdb-card-text>{{ clean(post.excerpt.rendered) }}</mdb-card-text>
+                <mdb-card-text [innerHTML]="post.excerpt.rendered"></mdb-card-text>
                   <a [routerLink] = "['/practiceareas']" fragment="{{post.slug}}" class="card-link">Read More...</a>
               </mdb-card-body>
             </mdb-card>

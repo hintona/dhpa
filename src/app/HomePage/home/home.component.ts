@@ -13,9 +13,4 @@ export class HomeComponent{
   constructor(private wp: WordpressService) {
     this.posts$ = this.wp.getPosts();
   }
-
-  clean(text:string){
-    wp: WordpressService;
-    return this.wp.cleanup(text);
-  }
 }

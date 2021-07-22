@@ -26,9 +26,4 @@ export class AppComponent {
       this.expanded = true;
     }
   }
-
-  clean(text:string){
-    wp: WordpressService;
-    return this.wp.cleanup(text);
-  }
 }

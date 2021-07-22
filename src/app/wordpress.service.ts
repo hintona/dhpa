@@ -19,14 +19,4 @@ export class WordpressService {
       }
     });
   }
-  
-  cleanup(content:string):string{
-    var text = content.replace('<p>','');
-    text = text.replace('</p>','');
-    text = text.replace('<br />','');
-    text = text.replace('&#8217;',"'");
-    text = text.replace('&amp;',"&");
-    text = text.replace('&#038;',"&");
-    return text;
-  }
 }
