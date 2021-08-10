@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
+
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { MatButtonModule } from '@angular/material/button'; 
 import { MatSelectModule } from '@angular/material/select';
@@ -31,6 +33,7 @@ import { ContactformComponent } from './HomePage/contactform/contactform.compone
     BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,
+    FormsModule,
     MDBBootstrapModule.forRoot(),
     MatButtonModule,
     MatSelectModule,

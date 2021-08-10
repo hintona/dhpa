@@ -15,62 +15,62 @@
       <!-- Modal's body -->
       <div class="modal-body">
 
-        <p>Call us at 727-576-8811, or you can fill out this form and we will contact you.</p>
+        <p>Call us at 727-576-8811, or you can fill out this form to email us and we will contact you. Fields with an * are required.</p>
         <form class="example-form">
           <mat-form-field color="accent" class="example-full-width" appearance="fill">
-            <mat-label>Legal First and Last Name</mat-label>
-            <input matInput placeholder="Ex. Joseph Smith">
+            <mat-label>Legal First and Last Name*</mat-label>
+            <input matInput placeholder="Ex. Joseph Smith" [ngModel]="clientName" (ngModelChange)="clientName=$event" [ngModelOptions]="{standalone: true}">
           </mat-form-field> 
           <mat-form-field color="accent" class="example-full-width" appearance="fill">
             <mat-label>Preferred Name</mat-label>
-            <input matInput placeholder="Ex. Joe">
+            <input matInput placeholder="Ex. Joe" [ngModel]="clientNickname" (ngModelChange)="clientNickname=$event" [ngModelOptions]="{standalone: true}">
           </mat-form-field> 
           <mat-form-field color="accent" class="example-full-width" appearance="fill">
-            <mat-label>Phone</mat-label>
-            <input matInput placeholder="###-###-####">
+            <mat-label>Phone*</mat-label>
+            <input matInput placeholder="###-###-####" [ngModel]="clientPhone" (ngModelChange)="clientPhone=$event" [ngModelOptions]="{standalone: true}">
           </mat-form-field> 
           <mat-form-field color="accent" class="example-full-width" appearance="fill">
-            <mat-label>Email</mat-label>
-            <input matInput type="email" placeholder="Ex. joe.smith@example.com">
+            <mat-label>Email*</mat-label>
+            <input matInput type="email" placeholder="Ex. joe.smith@example.com" [ngModel]="clientEmail" (ngModelChange)="clientEmail=$event" [ngModelOptions]="{standalone: true}">
           </mat-form-field> 
         </form>
-        
+
         <hr class="hr2">
 
-        <p>How would you like to be contacted?</p>
+        <p>How would you like to be contacted?*</p>
         <mat-radio-group aria-label="Select an option" value="contactType">
-          <mat-radio-button value="1" (change)="changeVal('1')">Email</mat-radio-button>
-          <mat-radio-button value="2" (change)="changeVal('2')">Phone</mat-radio-button>
+          <mat-radio-button value=1 (change)="changeVal(1)">Email</mat-radio-button>
+          <mat-radio-button value=2 (change)="changeVal(2)">Phone</mat-radio-button>
         </mat-radio-group>
         <p></p>
 
-        <p *ngIf="contactType == '1'">
-          Please make sure that the email you give us is secure, and is one that
+        <p *ngIf="contactType == 1">
+          Please make sure that the email you gave us is secure, and is one that
           no one else has access to.  Don't use a work email that your employer can access.  
           If you have a dissolution of marriage case, please don't give us an email account that
           you share with your spouse. 
         </p>
 
-        <div *ngIf="contactType == '2'">
+        <div *ngIf="contactType == 2">
           <p>What would be the best time to contact you?  Please note, we <b>will not text you.</b> 
            Deane & Hinton, P.A. will <b>always call.</b>  Our working hours are 9am-5pm, Monday through Friday. 
           We will not call you outside of these times.  If we cannot call you during the times you give us, we will email.</p>
           <mat-form-field color="accent" class="example-full-width" appearance="fill">
-            <mat-label>When should we call?</mat-label>
-            <textarea matInput placeholder="Ex. Monday at 10am, Tuesday at 10am, Thursday at 4pm"></textarea>
+            <mat-label>When should we call?*</mat-label>
+            <textarea matInput placeholder="Ex. Monday at 10am, Tuesday at 10am, Thursday at 4pm" [ngModel]="phoneAvailability" (ngModelChange)="phoneAvailability=$event" [ngModelOptions]="{standalone: true}"></textarea>
           </mat-form-field>
         </div>
 
         <hr class="hr2">
 
-        <p>What kind of case do you have?</p>
+        <p>What kind of case do you have?*</p>
         <mat-form-field color="accent" >
           <mat-select placeholder="Case" [(value)]="clientCase">
             <mat-option value="0"> </mat-option>
             <mat-option value="1">I'm not sure</mat-option>
             <div *ngFor="let post of posts$ | async">
               <div *ngIf="post.tags == 2">
-                <mat-option value={{post.title.rendered}}>{{post.title.rendered}}</mat-option>
+                <mat-option value={{post.title.rendered}} [innerHTML]="post.title.rendered"></mat-option>
               </div>
             </div>
             <mat-option value="2">Other</mat-option>
@@ -79,18 +79,24 @@
         </mat-form-field>
         <div *ngIf="clientCase == '2' || clientCase == '1'">
           <mat-form-field color="accent" class="example-full-width" appearance="fill">
-            <mat-label>Please briefly describe your case.</mat-label>
-            <textarea matInput placeholder="Ex."></textarea>
+            <mat-label>Please briefly describe your case.*</mat-label>
+            <textarea matInput placeholder="Ex." [ngModel]="caseDesc" (ngModelChange)="caseDesc=$event" [ngModelOptions]="{standalone: true}"></textarea>
           </mat-form-field>
         </div>
       </div>
 
       <!-- Modal's footer -->
       <div class="modal-footer">
-        <button mat-raised-button color="primary" style="text-transform:uppercase; color:white; height:45px; width:150px" (click)="basicModal.hide()" mdbWavesEffect>Send</button>
+        <div *ngIf="formCompleted(); else notCompleted">
+          <a mat-raised-button color="primary" style="text-transform:uppercase; color:white; height:40px; width:150px;" 
+          href="{{getEmail()}}" 
+          (click)="basicModal.hide()" mdbWavesEffect>Send</a>
+        </div>
+        <ng-template #notCompleted>
+          <p>Please finish filling out all required fields.</p>
+        </ng-template>
       </div>
 
     </div>
   </div>
 </div>
-<!--TODO: get this to actually send an email-->
