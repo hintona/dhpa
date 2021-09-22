@@ -15,3 +15,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+//TODO: Add in "About the Law" section which is basically just a blog area
