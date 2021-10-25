@@ -26,7 +26,7 @@
                 <mdb-card-title>
                   <h4 [innerHTML]="post.title.rendered"></h4>
                 </mdb-card-title>
-                <mdb-card-text [innerHTML]="post.excerpt.rendered"></mdb-card-text>
+                <mdb-card-text [innerHTML]="trim(post.excerpt.rendered)"></mdb-card-text>
                   <a [routerLink] = "['/practiceareas']" fragment="{{post.slug}}" class="card-link">Read More...</a>
               </mdb-card-body>
             </mdb-card>
@@ -34,7 +34,7 @@
         </div>
       <div class="spacer"></div>
     </div>
-    <div class="spacer"></div>
+    <div style="height:50px"></div>
     <div class="border-box"><app-contactform></app-contactform></div>
   </div>
  

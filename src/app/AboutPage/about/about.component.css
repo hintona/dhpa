@@ -11,6 +11,7 @@ hr.hr1{
     background: lightgrey;
     text-align: center;
     box-shadow: 10px 10px 5px grey;
+    margin-right: 15px
 }
 
 .grid-item{

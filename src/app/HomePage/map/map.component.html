@@ -19,9 +19,9 @@
         <div class="grid-item">
           <div class="spacer"></div>
           <div class="spacer"></div>
-          <p>1597 62nd Avenue North
+          <p><b>1597 62nd Avenue North
           <br />St. Petersburg, Florida 33702
-          <br />United States of America</p>
+          <br />United States of America</b></p>
             <p><mat-form-field color="accent">
               <mat-select placeholder="Hours" [(value)]="today">
                 <mat-option *ngFor="let day of days" [value]="day.value">
@@ -30,14 +30,18 @@
               </mat-select>
             </mat-form-field>
             </p>
-          <p>info@deaneandhinton.com</p>
+            <p><a href="mailto:info@deaneandhinton.com">
+              <u style="color: rgb(66, 66, 66);">info@deaneandhinton.com</u></a>
+            </p>
             
-          <p>727-576-8811</p>
+            <p><a href="tel:+17275768811">
+              <u style="color: rgb(66, 66, 66);">727-576-8811</u></a>
+            </p>
 
-          <p style="margin: 20px">Extension 1- Zoe Holcomb, Legal Assistant
-            <br />Extension 2- Zachary Deane, Legal Assistant
-            <br />Extension 3- Charles Hinton, Attorney
-            <br />Extension 4- Roland Hussong, Legal Assistant
+          <p style="margin: 20px"><b>Extension 1-</b> Zoe Holcomb, Legal Assistant
+            <br /><b>Extension 2-</b> Zachary Deane, Legal Assistant
+            <br /><b>Extension 3-</b> Charles Hinton, Attorney
+            <br /><b>Extension 4-</b> Roland Hussong, Legal Assistant
           </p>
             <p>Or, contact us using the button below:</p>
           <app-contactform></app-contactform>

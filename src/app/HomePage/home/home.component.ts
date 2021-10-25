@@ -13,4 +13,10 @@ export class HomeComponent{
   constructor(private wp: WordpressService) {
     this.posts$ = this.wp.getPosts();
   }
+
+  trim(content:String){
+    let excerpt:String = content.slice(0,50);
+    excerpt += "...";
+    return excerpt;
+  }
 }
