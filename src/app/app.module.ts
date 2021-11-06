@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { MatButtonModule } from '@angular/material/button'; 
@@ -17,6 +18,7 @@ import { PracticeareasComponent } from './PracticePage/practiceareas/practiceare
 import { HomeComponent } from './HomePage/home/home.component';
 import { MapComponent } from './HomePage/map/map.component';
 import { ContactformComponent } from './HomePage/contactform/contactform.component';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -40,7 +42,9 @@ import { ContactformComponent } from './HomePage/contactform/contactform.compone
     MatRadioModule,
     MatInputModule
   ],
-  providers: [],
+  providers: [
+    {provide : LocationStrategy , useClass: HashLocationStrategy }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
