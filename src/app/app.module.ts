@@ -14,21 +14,41 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AboutComponent } from './AboutPage/about/about.component';
-import { PracticeareasComponent } from './PracticePage/practiceareas/practiceareas.component';
 import { HomeComponent } from './HomePage/home/home.component';
 import { MapComponent } from './HomePage/map/map.component';
 import { ContactformComponent } from './HomePage/contactform/contactform.component';
 import { RouterModule } from '@angular/router';
+import { DOMComponent } from './PracticeAreas/dom/dom.component';
+import { ComLitComponent } from './PracticeAreas/com-lit/com-lit.component';
+import { PatComponent } from './PracticeAreas/pat/pat.component';
+import { ConLawComponent } from './PracticeAreas/con-law/con-law.component';
+import { EstateComponent } from './PracticeAreas/estate/estate.component';
+import { ProbateComponent } from './PracticeAreas/probate/probate.component';
+import { RETComponent } from './PracticeAreas/ret/ret.component';
+import { TrustsComponent } from './PracticeAreas/trusts/trusts.component';
+import { MFDComponent } from './PracticeAreas/mfd/mfd.component';
+import { FOCComponent } from './PracticeAreas/foc/foc.component';
+import { CollectComponent } from './PracticeAreas/collect/collect.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     AboutComponent,
-    PracticeareasComponent,
     HomeComponent,
     MapComponent,
-    ContactformComponent
+    ContactformComponent,
+    DOMComponent,
+    ComLitComponent,
+    PatComponent,
+    ConLawComponent,
+    EstateComponent,
+    ProbateComponent,
+    RETComponent,
+    TrustsComponent,
+    MFDComponent,
+    FOCComponent,
+    CollectComponent
   ],
   imports: [
     BrowserModule,
