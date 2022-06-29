@@ -26,23 +26,24 @@
       <div class="row">
         
         <div class="column" *ngFor="let post of posts$ | async">
-          <div class="grid-item" *ngIf="post.tags == 2">
+          <div class="grid-item" *ngIf="post.tags[1] == 2 || post.tags[0] == 2">
             <mdb-card>
-              <mdb-card-body>
+              <mdb-card-body style="height:230px">
                 <mdb-card-title>
                   <h4 [innerHTML]="post.title.rendered"></h4>
                 </mdb-card-title>
                 <mdb-card-text [innerHTML]="trim(post.excerpt.rendered)"></mdb-card-text>
-                  <a [routerLink] = "['/practiceareas']" fragment="{{post.slug}}" class="card-link">Read More...</a>
+                  <a routerLink = "{{post.slug}}" class="card-link">Read More...</a>
               </mdb-card-body>
             </mdb-card>
           </div>
         </div>
-      <div class="spacer"></div>
+        <div class="spacer"></div>
     </div>
-    <div style="height:50px"></div>
-    <div class="border-box"><app-contactform></app-contactform></div>
+    <div style="height:50px"></div> 
   </div>
+
+<div class="border-box"><app-contactform></app-contactform></div>
  
 <div class="spacer"></div>
 <hr class="hr1">

@@ -27,7 +27,16 @@
               <a class="nav-link waves-light" mdbWavesEffect href="/">Home</a>
           </li>
           <li class="nav-item">
-              <a class="nav-link waves-light" mdbWavesEffect href="#/practiceareas">Practice Areas</a>
+            <div class="dropdown">
+              <a class="nav-link waves-light" mdbWavesEffect >Practice Areas <i class="fas fa-caret-down"></i></a>
+              <div class="dropdown-content">
+                <div *ngFor="let post of posts$ | async">
+                  <a href="#/{{post.slug}}" *ngIf="post.tags[1] == 2" [innerHTML]="post.title.rendered"></a>
+                  <a href="#/{{post.slug}}" *ngIf="post.tags[0] == 2" [innerHTML]="post.title.rendered"></a>
+                </div>
+                
+              </div>
+            </div> 
           </li>
           <li class="nav-item">
               <a class="nav-link waves-light" mdbWavesEffect href="#/about">Meet Our Team</a>
