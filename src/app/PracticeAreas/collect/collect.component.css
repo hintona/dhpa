@@ -1,0 +1,27 @@
+.title{
+    text-align: center;
+    padding: 20px;
+}
+
+.description{
+    text-align:center;
+    padding-left:5vw;
+    padding-right:5vw
+}
+
+.index{
+    width: 300px;
+    max-height: 80vh;
+}
+
+.post{
+    max-width: 700px;
+    min-width: 200px;
+    width:50vw;
+}
+
+hr.hr1{
+    border-top: 4px solid #454851;
+    width: 60%;
+    margin-top: 80px;
+}
