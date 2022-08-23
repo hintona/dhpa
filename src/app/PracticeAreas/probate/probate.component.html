@@ -17,7 +17,7 @@
                         <mdb-card-text>
                             <ul *ngFor="let post of posts$ | async">
                                 <li *ngIf="(post.tags[1] == 12 || post.tags[0] == 12) && (post.tags[1] != 2 && post.tags[0] != 2)">
-                                    <a [routerLink]="['/collections']" fragment="{{post.title.rendered}}"><u style="color:grey;"><span [innerHTML]="post.title.rendered" style="color:grey;"></span></u></a>
+                                    <a [routerLink]="['/probate']" fragment="{{post.title.rendered}}"><u style="color:grey;"><span [innerHTML]="post.title.rendered" style="color:grey;"></span></u></a>
                                 </li>
                             </ul>
                         </mdb-card-text>
@@ -33,7 +33,7 @@
                             Frequently Asked Questions
                         </mdb-card-title>
                         <mdb-card-text>
-                            Below are some frequently asked questions about Collections. This section is a work in progress, so check back here later if you don't see your question, or contact us directly.
+                            Below are some frequently asked questions about Probate. This section is a work in progress, so check back here later if you don't see your question, or contact us directly.
                         </mdb-card-text>
                     </mdb-card-body>
                 </mdb-card>
@@ -41,7 +41,7 @@
             <div class="spacer"></div>
             <div *ngFor="let post of posts$ | async">
                 <div *ngIf="(post.tags[1] == 12 || post.tags[0] == 12) && (post.tags[1] != 2 && post.tags[0] != 2)">
-                    <mdb-card id="{{post.title.rendered}}">
+                    <mdb-card id="{{post.title.rendered}}" class="post">
                         <mdb-card-body>
                             <mdb-card-title [innerHTML]="post.title.rendered"></mdb-card-title>
                             <mdb-card-text [innerHTML]="post.content.rendered"></mdb-card-text>
