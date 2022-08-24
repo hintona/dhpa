@@ -4,11 +4,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
-import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { MDBBootstrapModule, ModalModule } from 'angular-bootstrap-md';
 import { MatButtonModule } from '@angular/material/button'; 
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatInputModule } from '@angular/material/input'; 
+import {MatCheckboxModule} from '@angular/material/checkbox';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -29,6 +30,7 @@ import { TrustsComponent } from './PracticeAreas/trusts/trusts.component';
 import { MFDComponent } from './PracticeAreas/mfd/mfd.component';
 import { FOCComponent } from './PracticeAreas/foc/foc.component';
 import { CollectComponent } from './PracticeAreas/collect/collect.component';
+import { DiscModalComponent } from './disc-modal/disc-modal.component';
 
 
 @NgModule({
@@ -48,7 +50,8 @@ import { CollectComponent } from './PracticeAreas/collect/collect.component';
     TrustsComponent,
     MFDComponent,
     FOCComponent,
-    CollectComponent
+    CollectComponent,
+    DiscModalComponent
   ],
   imports: [
     BrowserModule,
@@ -60,7 +63,8 @@ import { CollectComponent } from './PracticeAreas/collect/collect.component';
     MatButtonModule,
     MatSelectModule,
     MatRadioModule,
-    MatInputModule
+    MatInputModule,
+    MatCheckboxModule
   ],
   providers: [
     {provide : LocationStrategy , useClass: HashLocationStrategy }

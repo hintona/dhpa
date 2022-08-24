@@ -1,0 +1,29 @@
+<div>
+    <div class="modal-header">
+        <h4 class="modal-title w-100" id="myModalLabel">Disclaimer</h4>
+    </div>
+    <div class="modal-body">
+        <div style="height:55vh; overflow-y: scroll;">
+            <p>
+                The information provided on this website does not, and is not intended to, constitute legal advice; instead, all information, content, and materials available on this site are for general informational purposes only.  Information on this website may not constitute the most up-to-date legal or other information.
+            </p>
+            <p>
+                Readers of this website should speak to an attorney to obtain advice with respect to any particular legal matter.  No reader, user, or browser of this site should act or refrain from acting on the basis of information on this site without first seeking legal advice from counsel in the relevant jurisdiction.  Only an  attorney can provide assurances that the information contained herein – and your interpretation of it – is applicable or appropriate to your particular situation.  Use of, and access to, this website does not create an attorney-client relationship between the reader, user, or browser and website authors, contributors, or contributing law firms.
+            </p>
+            <p>
+                The views expressed at, or through, this site are those of the individual authors writing in their individual capacities only.  All liability with respect to actions taken or not taken based on the contents of this site are hereby expressly disclaimed.  The content on this posting is provided "as is;" no representations are made that the content is error-free.
+            </p>
+            <p style="padding-left: 1vw">
+                <mat-checkbox [checked]="accepted" (change)="setAccepted($event.checked)">I Understand</mat-checkbox>
+            </p>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <div *ngIf="accepted; else notAccepted">
+            <button mat-raised-button color="primary" style="text-transform:uppercase; color:white; height:45px; width:150px" (click)="modalRef.hide()">Proceed</button>
+        </div>
+        <ng-template #notAccepted>
+            <button mat-raised-button color="primary" style="text-transform:uppercase; color:white; height:45px; width:150px" disabled (click)="modalRef.hide()">Proceed</button>
+        </ng-template>
+    </div>
+</div>

@@ -33,7 +33,7 @@
                   <h4 [innerHTML]="post.title.rendered"></h4>
                 </mdb-card-title>
                 <mdb-card-text [innerHTML]="trim(post.excerpt.rendered)"></mdb-card-text>
-                  <a routerLink = "{{post.slug}}" class="card-link">Read More...</a>
+                  <a routerLink="{{post.slug}}" fragment="top" class="card-link">Read More...</a>
               </mdb-card-body>
             </mdb-card>
           </div>
